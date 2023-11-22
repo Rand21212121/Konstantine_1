@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+<div class="container">
+ <h2>All the users that are over 20: </h2>
+ <div *ngFor="let user of Users">
+   <div *ngIf="user.age > 20">
+    <p>First name: {{user.firstName}}</p>
+    <p>Last name: {{user.lastName}}</p>
+    <p> Age: {{user.age}}</p>
+  <hr>
+  </div>
+</div>
+
+
+
+<app-user [users]="parentUsers" (childUsersEvent)="receiveChildUsers($event)"></app-user>
+<h1>Data from Child Component</h1>
+<ul>
+  <li *ngFor="let user of childUsers">
+    {{ user.Firstname }} {{ user.Lastname }} ({{ user.DateOfBirth }}) {{ user.PhoneNumber }} {{ user.Email }}
+  </li>
+</ul>
+</div>
+
+
